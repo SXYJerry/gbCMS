@@ -67,3 +67,13 @@ function cate_atc_get($id){
     $row = $model->query("select id,title,model_id,cate,atc_id,status,createtime from cate_atc WHERE id = {$id}");
     return $row[0];
 }
+function get_difftime_model($time,$format)
+{
+	$zero1=strtotime($time);
+	$zero2=strtotime(date('Y-m-d h:i:s'));
+	
+	$diff=$zero2-$zero1;
+	$str=date($format,$diff)."前";
+	
+	
+}
